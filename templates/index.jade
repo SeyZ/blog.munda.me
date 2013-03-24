@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  //- underscore helps us filter and sort our articles
+  - var articles = _.chain(contents.articles._.directories).map(function(item) {
+  -   // map articles to index pages of subdirectories of 'articles'
+  -   return item.index
+  - }).compact().sortBy(function(item) { // compact removes any directories w/o an index
+  -   // sort them by date
+  -   return -item.date
+  - }).first(5).value() // and finally take the first 5
+  each article in articles
+    article.post
+      header
+        h2= article.title
+      section.content!= article.html

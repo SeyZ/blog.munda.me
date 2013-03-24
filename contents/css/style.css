@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../font/Roboto-Regular.ttf');
+}
+html, body {
+  min-height: 100%;
+  color: white;
+  background: url('../img/debut_dark.png');
+  font-family: Roboto;
+}
+a {
+  color: #f89406;
+}
+header h1 {
+  line-height: 10px;
+}
+.hide {
+  display: none;
+}
+#content p {
+  text-align: justify;
+}
+.post h2 {
+  color: #f89406;
+}

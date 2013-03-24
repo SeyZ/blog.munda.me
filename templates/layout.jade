@@ -1,0 +1,50 @@
+!!! 5
+html(lang='en')
+  head
+    block head
+      meta(charset='utf-8')
+      title
+        block title
+          = locals.name
+      link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
+      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Fredericka+the+Great')
+      link(rel='stylesheet', href='/css/smart-grid.css')
+      link(rel='stylesheet', href='/css/style.css')
+  body
+    .container
+      .row
+        .columns.eight
+          header
+            hgroup
+              h1= locals.name
+              h3= locals.description
+          #content.row
+            .columns.twelve
+              block content
+        #right-column.columns.offset-one.three
+          block header
+            .vcard
+              h2 About me
+              p My name is 
+                span.fn Sandro Munda
+                | .I love coding. I love tweak my system.
+              p For the moment, I live in 
+                span.adr
+                  span.country-name Belgium
+                  , 
+                  span.locality Liège
+                  .
+            .freelance
+              h2 Freelance
+              p I am also a part-time freelance. I materialize ideas by
+                | implementing minimum valuable products (MVP) in two weeks.
+              p Visits 
+                a(href='http://munda.me') http://munda.me 
+                | for more information.
+            .elsewhere
+              h2 Elsewhere
+              a(href="http://github.com/SeyZ") Github
+              br
+              a(href="http://stackoverflow.com/users/259576/sandro-munda") StackOverflow
+              br
+              a(href="http://twitter.com/SeyZ_") Twitter
